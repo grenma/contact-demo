@@ -1,0 +1,56 @@
+<div class="form-wrapper">
+  <h2>Contact Form</h2>
+  <form
+    #contactForm="ngForm"
+    (ngSubmit)="addContact(firstName, lastName, phoneNumber)"
+  >
+    <div>
+      <label for="firstName">First name</label>
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        class="userFirstname"
+        required
+        [(ngModel)]="firstName"
+      />
+    </div>
+    <div>
+      <label for="lastName">Last name</label>
+      <input
+        type="text"
+        name="lastName"
+        id="lastName"
+        class="userLastname"
+        required
+        [(ngModel)]="lastName"
+      />
+    </div>
+    <div>
+      <label for="phoneNumber">Phone number</label>
+      <input
+        type="tel"
+        maxlength="10"
+        minlength="10"
+        name="phoneNumber"
+        id="phoneNumber"
+        class="userPhone"
+        required
+        restrictNumbers
+        [(ngModel)]="phoneNumber"
+      />
+    </div>
+    <div class="submit">
+      <button type="submit" [disabled]="!contactForm.valid">Add Contact</button>
+    </div>
+  </form>
+</div>
+<div>
+  <div class="informationTable">
+    <h2>Contacts</h2>
+    <div *ngFor="let contact of sortedContacts" class="card">
+      <div class="name">{{ contact.firstName }} {{ contact.lastName }}</div>
+      <div class="phone">{{ contact.phoneNumber | phone }}</div>
+    </div>
+  </div>
+</div>

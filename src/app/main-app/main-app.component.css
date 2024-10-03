@@ -1,0 +1,31 @@
+.card {
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+  }
+
+  .form-wrapper, .informationTable {
+    width: 220px;
+    padding: 5px;
+    border: 1px solid #ccc;
+
+  }
+  input {
+    margin: 5px;
+    width: 200px;
+  }
+  label {
+    font-weight: bold;
+    display: block;
+    margin-top: 5px;
+  }
+  label:after { content: ": " }
+
+  .submit {
+    width: 200px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
